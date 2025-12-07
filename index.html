@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>System Breach</title>
+  <style>
+    body {
+      margin:0;
+      font-family:Arial, sans-serif;
+      background:black;
+      color:#00ff00;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      height:100vh;
+      font-size:22px;
+      transition:0.3s;
+    }
+    #heart {
+      display:none;
+      font-size:90px;
+      color:red;
+      animation:pop 0.4s ease forwards;
+    }
+    @keyframes pop {
+      0% {transform:scale(0);}
+      100% {transform:scale(1);}
+    }
+    @keyframes shake {
+      0%, 100% { transform: translate(0,0); }
+      25% { transform: translate(10px,-10px); }
+      50% { transform: translate(-10px,10px); }
+      75% { transform: translate(10px,10px); }
+    }
+  </style>
+</head>
+<body>
+
+<div id="loading">⚠️ HỆ THỐNG TẢI... </div>
+<div id="heart">💖 CON NGU 💥</div>
+
+<script>
+setTimeout(() => {
+  document.body.style.background="white";
+  document.body.style.color="black";
+  document.body.style.animation="shake 0.3s infinite";
+
+  setTimeout(()=>{
+    document.body.style.animation="none";
+    document.getElementById("loading").style.display="none";
+    document.getElementById("heart").style.display="block";
+  },600);
+
+}, 2000);
+</script>
+
+</body>
+</html>
